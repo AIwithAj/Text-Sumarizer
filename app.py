@@ -5,7 +5,7 @@ import os
 from fastapi.templating import Jinja2Templates
 from starlette.responses import RedirectResponse
 from fastapi.responses import Response
-from textSummarizer.pipeline.prediction import PredictionPipeline
+from src.textSummarizer.pipeline.prediction import PredictionPipeline
 
 
 text:str = "What is Text Summarization?"
@@ -18,14 +18,14 @@ async def index():
 
 
 
-@app.get("/train")
-async def training():
-    try:
-        os.system("python main.py")
-        return Response("Training successful !!")
+# @app.get("/train")
+# async def training():
+#     try:
+#         os.system("python main.py")
+#         return Response("Training successful !!")
 
-    except Exception as e:
-        return Response(f"Error Occurred! {e}")
+#     except Exception as e:
+#         return Response(f"Error Occurred! {e}")
     
 
 
